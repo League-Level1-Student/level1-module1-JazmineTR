@@ -1,17 +1,23 @@
 package _05_vault;
 
 public class SecretAgent {
-	Vault neat= new Vault();
+	Vault neat;
+	
+	public SecretAgent() {
+		neat = new Vault();
+	}
 
 	public void findCode() {
 		for(int i=0;i<1000001;i++) {
-			neat.tryCode(i);
-			if(neat.equals(true)) {
+			boolean work = neat.tryCode(i);
+			if(work) {
 			System.out.println(i);
+			return;
 			}
-			else {
-				System.out.println(-1);
+		
+			
 			}
+		System.out.println(-1);
 			}
 		}
-}
+
